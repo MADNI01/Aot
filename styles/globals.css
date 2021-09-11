@@ -27,7 +27,7 @@ a {
 .slick-slide {
   width: 300px;
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .slick-slide {
     width: 250px;
   }

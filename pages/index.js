@@ -35,11 +35,12 @@ export default function Home() {
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 3,
-    speed: 500,
+    speed: 300,
     variableWidth: true,
     draggable: windowSize.width > 1000 ? false : true,
     waitForAnimate:false,
-    arrows:false
+    arrows:false,
+    cssEase: 'linear',
   };
   const slider1 = useRef();
 
