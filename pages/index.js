@@ -6,6 +6,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Data from "../components/data/Data";
+import Nav from "../components/nav/Nav";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
   /* get window dimensions */
@@ -43,18 +46,20 @@ export default function Home() {
   };
   const slider1 = useRef();
 
+  const transition = { duration: .6, ease: [0.43, 0.13, 0.23, 0.96] };
   return (
     <>
       <div className={classes.home}>
         <Container className={classes.container}>
-          <div className={classes.nav}>
-            <img src='logo1.png'/>
-            <img src="logo.png" />
-            <img src='logo2.png'/>
-          </div>
-          <div className={classes.names}>
+          <Nav />
+          <motion.div
+            className={classes.names}
+            exit={{ opacity: 0 }}
+            transition={transition}
+          >
             {Data.map((item, n) => (
-              <h2 key={item.name}
+              <h2
+                key={item.name}
                 onMouseEnter={() => {
                   slider1.current.slickGoTo(n);
                 }}
@@ -62,19 +67,16 @@ export default function Home() {
                 {item.name}
               </h2>
             ))}
-          </div>
+          </motion.div>
         </Container>
         <div className={classes.content}>
           <Slider {...settings1} ref={(slider) => (slider1.current = slider)}>
             {Data.map((item) => (
-              <div className={classes.card} key={item.name}>
+              <div className={classes.card} key={item.key}>
                 <div className={classes.box}>
-                  <img
-                    onClick={() => {
-                      console.log(item.name);
-                    }}
-                    src={item.img}
-                  />
+                  <Link href={`/${item.key}`}>
+                    <img src={item.img} />
+                  </Link>
                   {windowSize.width < 1000 ? <h2>{item.name}</h2> : null}
                 </div>
                 <div className={classes.text}></div>

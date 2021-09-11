@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import { AnimatePresence } from "framer-motion";
+function MyApp({ Component, pageProps, router }) {
+  return (
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+      <AnimatePresence initial={false} exitBeforeEnter>
+        <Component {...pageProps} key={router.route} />
+      </AnimatePresence>
+
+  );
 }
 
-export default MyApp
+export default MyApp;
