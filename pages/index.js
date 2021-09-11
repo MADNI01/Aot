@@ -8,26 +8,26 @@ import "slick-carousel/slick/slick-theme.css";
 import Data from "../components/data/Data";
 
 export default function Home() {
-    /* get window dimensions */
-    const [windowSize, setWindowSize] = useState({
-      width: undefined,
-      height: undefined,
-    });
-    useEffect(() => {
-      function handleResize() {
-        setWindowSize({
-          width: window.innerWidth,
-          height: window.innerHeight,
-        });
-      }
-  
-      window.addEventListener("resize", handleResize);
-  
-      handleResize();
-  
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-    /* get window dimensions */
+  /* get window dimensions */
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  /* get window dimensions */
 
   const settings1 = {
     className: "center",
@@ -38,29 +38,26 @@ export default function Home() {
     speed: 300,
     variableWidth: true,
     draggable: windowSize.width > 1000 ? false : true,
-    waitForAnimate:false,
-    arrows:false,
-    cssEase: 'linear',
+    waitForAnimate: false,
+    arrows: false,
   };
   const slider1 = useRef();
-
-
 
   return (
     <>
       <div className={classes.home}>
         <Container className={classes.container}>
           <div className={classes.nav}>
-            <img src='logo.png'/>
+            <img src='logo1.png'/>
+            <img src="logo.png" />
+            <img src='logo2.png'/>
           </div>
           <div className={classes.names}>
             {Data.map((item, n) => (
-              <h2
+              <h2 key={item.name}
                 onMouseEnter={() => {
                   slider1.current.slickGoTo(n);
                 }}
-
-                
               >
                 {item.name}
               </h2>
@@ -70,9 +67,14 @@ export default function Home() {
         <div className={classes.content}>
           <Slider {...settings1} ref={(slider) => (slider1.current = slider)}>
             {Data.map((item) => (
-              <div className={classes.card}>
+              <div className={classes.card} key={item.name}>
                 <div className={classes.box}>
-                  <img onClick={()=>{console.log(item.name)}} src={item.img} />
+                  <img
+                    onClick={() => {
+                      console.log(item.name);
+                    }}
+                    src={item.img}
+                  />
                   {windowSize.width < 1000 ? <h2>{item.name}</h2> : null}
                 </div>
                 <div className={classes.text}></div>
