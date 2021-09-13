@@ -5,6 +5,7 @@ import Data from "../data/Data";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import progressiveImage from 'react-progressive-image'
 const AniSection = () => {
     /* get window dimensions */
     const [windowSize, setWindowSize] = useState({
