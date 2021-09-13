@@ -1,11 +1,11 @@
 const Data = [
-  { key: "annie", name: "Annie Leonhart", img: "annie-min.jpg" },
-  { key: "reiner", name: "Reiner Braun", img: "reiner-min.jpg" },
-  { key: "bertolt", name: "Bertolt Hoover", img: "bert-min.jpg" },
-  { key: "mikasa", name: "mikasa ackerman", img: "mikasa-min.jpg" },
-  { key: "eren", name: "eren yeager", img: "eren-min.jpg" },
-  { key: "levi", name: "Levi Ackerman", img: "levi-min.jpg" },
-  { key: "armin", name: "Armin Arlert", img: "armin-min.jpg" },
-  { key: "sasha", name: "Sasha Braus", img: "sasha-min.jpg" },
+  { key: "annie", name: "Annie Leonhart", img: "annie.jpg" },
+  { key: "reiner", name: "Reiner Braun", img: "reiner.jpg" },
+  { key: "bertolt", name: "Bertolt Hoover", img: "bert.jpg" },
+  { key: "mikasa", name: "mikasa ackerman", img: "mikasa.jpg" },
+  { key: "eren", name: "eren yeager", img: "eren.jpg" },
+  { key: "levi", name: "Levi Ackerman", img: "levi.jpg" },
+  { key: "armin", name: "Armin Arlert", img: "armin.jpg" },
+  { key: "sasha", name: "Sasha Braus", img: "sasha.jpg" },
 ];
 export default Data;
