@@ -4,7 +4,7 @@ function MyApp({ Component, pageProps, router }) {
   return (
 
       <AnimatePresence initial={false} exitBeforeEnter>
-        <Component {...pageProps} key={router.route} />
+        <Component {...pageProps}  />
       </AnimatePresence>
 
   );
