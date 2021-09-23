@@ -1,12 +1,11 @@
-import Container from "../container/Container";
 import classes from "./Nav.module.css";
-import ProgressiveImage from "react-progressive-image";
+import Link from 'next/link'
 const Nav = () => {
   return (
     <div className={classes.nav}>
-      <img src="logo1.png" />
-      <img src="logo.png" />
-      <img src="logo2.png" />
+      <Link href='/'><img src="logo1.png" /></Link>
+      <Link href='/'><img src="logo.png" /></Link>
+      <Link href='/'><img src="logo2.png" /></Link>
     </div>
   );
 };

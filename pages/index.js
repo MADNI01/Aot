@@ -58,14 +58,14 @@ export default function Home() {
             transition={transition}
           >
             {Data.map((item, n) => (
-              <h2
+              <Link href={`/${item.key}`}><h2
                 key={item.name}
                 onMouseEnter={() => {
                   slider1.current.slickGoTo(n);
                 }}
               >
                 {item.name}
-              </h2>
+              </h2></Link>
             ))}
           </motion.div>
         </Container>
