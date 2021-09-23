@@ -6,6 +6,14 @@
   position: relative;
   overflow: hidden;
 }
+.name {
+  position: absolute;
+  width: max-content;
+  right: 50%;
+}
+.name span {
+  font-size: 140px;
+}
 .content {
   position: absolute;
   bottom: 50%;
@@ -21,7 +29,6 @@
   height: 300px;
   text-align: center;
   position: relative;
-
 }
 .content .card .box {
   display: flex;
@@ -39,15 +46,7 @@
   bottom: 0;
 }
 
-/* .content .card .box img.active{
-  width: 100%;
-} */
-
 .content .card:nth-child(3) .box img {
   filter: blur(0px);
   transform: scale(1.1);
-  /*   transition: width 4s ; */
 }
-/* .content .card:nth-child(3){
-  transition: 3s;
-} */
